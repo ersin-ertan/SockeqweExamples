@@ -15,7 +15,8 @@ public class MainActivity extends AppCompatActivity{
 		int id = 1;
 		String title = "hello";
 
-		getFragmentManager().beginTransaction().add(new MyChildBuilder(2, title).id(id).build(), "fragmentTag").commit();
+
+		getSupportFragmentManager().beginTransaction().add(new MyChildBuilder(2, title).id(id).build(), "fragmentTag").commit();
 		// good to pass in if double pane(tablet) vs single pane
 
 	}
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity{
 		int id = item.getItemId();
 
 		if(id == R.id.action_settings){
+			((MyChild) getSupportFragmentManager().findFragmentByTag("fragmentTag")).removeZerothObject();
 			return true;
 		}
 
