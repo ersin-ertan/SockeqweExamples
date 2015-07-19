@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-	android:layout_height = "match_parent"
+	android:layout_height = "wrap_content"
 	android:layout_width = "match_parent"
 	xmlns:android = "http://schemas.android.com/apk/res/android"
+	android:dividerPadding = "@dimen/abc_action_bar_content_inset_material"
+	android:fadeScrollbars = "true"
+	android:showDividers = "middle"
+	android:divider = "@android:color/black"
 	>
 
 	<TextView
-		android:id = "@+id/text"
+		android:id = "@+id/row_txt"
 		android:layout_height = "wrap_content"
 		android:layout_width = "wrap_content"
 		android:text = "New Text"
+		android:layout_gravity = "center"
 		/>
 
 	<ImageView
-		android:id = "@+id/image"
+		android:id = "@+id/row_image"
 		android:layout_height = "wrap_content"
 		android:layout_width = "wrap_content"
 		android:src = "@drawable/abc_btn_check_to_on_mtrl_015"
+		android:layout_gravity = "center"
 		/>
 </LinearLayout>

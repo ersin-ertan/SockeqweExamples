@@ -40,4 +40,8 @@ dependencies{
 	compile 'com.hannesdorfmann.annotatedadapter:annotation:1.1.0'
 	compile 'com.hannesdorfmann.annotatedadapter:support-recyclerview:1.1.0'
 	apt 'com.hannesdorfmann.annotatedadapter:processor:1.1.0'
+
+	// activity and service starter; intent builder
+	compile 'se.emilsjolander:intentbuilder-api:0.13.0'
+	apt 'se.emilsjolander:intentbuilder-compiler:0.13.0'
 }
