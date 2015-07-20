@@ -3,6 +3,7 @@ package com.nullcognition.sockeqweexamples;
 import android.app.IntentService;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import se.emilsjolander.intentbuilder.Extra;
@@ -46,7 +47,8 @@ public class MyIntentService extends IntentService{
 
 	private void sendParcelableToCallingActivity(){
 
-		MyReceiver.sendParcelable(this, "crazy");
+		MyReceiver.sendParcelable(this, new TestParcelable());
 	}
 
 }
+
