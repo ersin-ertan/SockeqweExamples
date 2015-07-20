@@ -12,6 +12,7 @@ import se.emilsjolander.intentbuilder.IntentBuilder;
 public class MyIntentService extends IntentService{
 
 	public static final String ACTION = "com.nullcognition.spotifystreamer2";
+	public static final String INTENT = "com.nullcognition.PARCEL_INTENT";
 
 	@Extra
 	String action;
@@ -37,7 +38,15 @@ public class MyIntentService extends IntentService{
 		if(intent != null){
 			final String action = intent.getAction();
 
+			sendParcelableToCallingActivity();
+
 		}
+	}
+
+
+	private void sendParcelableToCallingActivity(){
+
+		MyReceiver.sendParcelable(this, "crazy");
 	}
 
 }

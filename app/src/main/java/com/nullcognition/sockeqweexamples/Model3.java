@@ -18,7 +18,7 @@ class Model3 implements Parcelable{
 
 	int i = 4; // will get parceled
 
-	@Bagger(UnSupportedParcelabeFieldBagger.class)
+	@Bagger(UnSupportedParcelabeFieldBagger.class) // use the bagged class as the annotation
 	UnSupportedParcelableField u;
 
 	@Override
