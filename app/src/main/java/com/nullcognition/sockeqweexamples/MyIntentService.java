@@ -47,7 +47,7 @@ public class MyIntentService extends IntentService{
 
 	private void sendParcelableToCallingActivity(){
 
-		MyReceiver.sendParcelable(this, new TestParcelable());
+		MyReceiver.sendParcelable(this, new Model3());
 	}
 
 }

@@ -12,14 +12,14 @@ import com.hannesdorfmann.parcelableplease.annotation.ParcelablePlease;
 class Model3 implements Parcelable{
 
 	@ParcelableNoThanks
-	String s = "e";
+	String strNotParcel = "e";
 
-	private int j = 3; // would have been a compile error
+	private int privateIntButIgnored = 3; // would have been a compile error
 
-	int i = 4; // will get parceled
+	int aPackageVisibleInt = 4; // will get parceled
 
 	@Bagger(UnSupportedParcelabeFieldBagger.class) // use the bagged class as the annotation
-	UnSupportedParcelableField u;
+	UnSupportedParcelableField UnSupportedParcelableFieldButBagged = new UnSupportedParcelableField(24);
 
 	@Override
 	public int describeContents(){ return 0; }
