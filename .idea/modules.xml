@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SockeqweExamples.iml" filepath="$PROJECT_DIR$/SockeqweExamples.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/intentbuilder/intentbuilder.iml" filepath="$PROJECT_DIR$/intentbuilder/intentbuilder.iml" />
     </modules>
   </component>
 </project>
