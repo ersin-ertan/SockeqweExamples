@@ -4,41 +4,22 @@
 
 #### Emilsjolander Libraries: [IntentBuilder][6]
 
-FragmentArgs: Annotation Processor for setting arguments in android fragments
-```java
 
-```
 
-AnnotatetdAdapter: Annotation processor for generating RecyclerView and AbsListView adapters
+######[FragmentArgs][7]: Annotation Processor for setting arguments in android fragments
 
-```java
-@Arg
-String title;
 
-@Arg(required = false)
-int id;
+######[AnnotatedAdapter][8]: Annotation processor for generating RecyclerView and AbsListView adapters
 
-FragmentArgs.inject(this);
 
-@FragmentArgsInherited
-public class Frag01 extend Frag00
+######[ParcelablePlease][9]: Annotation Processor for generating Parcelable code
 
-```
 
-ParcelablePlease: Annotation Processor for generating Parcelable code
-```java
+######[AdapterDelegates][10]: "Favor composition over inheritance" for RecyclerView Adapters
 
-```
 
-AdapterDelegates: "Favor composition over inheritance" for RecyclerView Adapters
-```java
+######[IntentBuilder][11]: Type safe intent building for services and activities
 
-```
-
-IntentBuilder: Type safe intent building for services and activities
-'''java
-
-```
 
 
 [0]: https://github.com/sockeqwe
@@ -50,3 +31,9 @@ IntentBuilder: Type safe intent building for services and activities
 [5]: https://github.com/sockeqwe/adapterDelegates
 
 [6]: https://github.com/emilsjolander/IntentBuilder
+
+[7]: https://github.com/ersin-ertan/SockeqweExamples/tree/master/fragmentargs/src/main/java/com/nullcognition/fragmentargs
+[8]: https://github.com/ersin-ertan/SockeqweExamples/tree/master/annotatedadapter/src/main/java/com/nullcognition/annotatedadapter
+[9]: https://github.com/ersin-ertan/SockeqweExamples/tree/master/parcelableplease/src/main/java/com/nullcognition/parcelableplease
+[10]: https://github.com/ersin-ertan/SockeqweExamples/tree/master/adapterdelegates/src/main/java/com/nullcognition/adapterdelegates
+[11]: https://github.com/ersin-ertan/SockeqweExamples/tree/master/intentbuilder/src/main/java/com/nullcognition/intentbuilder
