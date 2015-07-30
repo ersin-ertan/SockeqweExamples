@@ -1,23 +1,29 @@
-###**Developers**
+###Developers
  - [Hannes Dorfmann][0] sockeqwe
  - [Emil Sjölander][1] emilsjolander
 
-####**Sockeqwe Libraries**
+
+####Sockeqwe Libraries
 - [FragmentArgs][2]
 - [AnnotatetdAdapter][3]
 - [ParcelablePlease][4]
 - [AdapterDelegates][5]
 
-####**Emilsjolander Libraries**
+
+####Emilsjolander Libraries
 - [IntentBuilder][6]
 
----
 
-####Examples
+####Worked Examples
+
 ######[FragmentArgs][7]: Annotation Processor for setting arguments in android fragments
+
 ######[AnnotatedAdapter][8]: Annotation Processor for generating RecyclerView and AbsListView adapters
+
 ######[ParcelablePlease][9]: Annotation Processor for generating Parcelable code
+
 ######[AdapterDelegates][10]: "Favor composition over inheritance" for RecyclerView Adapters
+
 ######[IntentBuilder][11]: Type safe intent building for services and activities
 
 
