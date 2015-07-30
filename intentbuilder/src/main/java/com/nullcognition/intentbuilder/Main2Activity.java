@@ -24,6 +24,7 @@ public class Main2Activity extends AppCompatActivity{
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 
+		// intent should not be null if the intent builder is used for service/activity creation
 		Intent intent = getIntent();
 		if(intent != null){
 			Main2ActivityIntentBuilder.inject(getIntent(), this);
