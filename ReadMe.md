@@ -5,14 +5,40 @@
 #### Emilsjolander Libraries: [IntentBuilder][6]
 
 FragmentArgs: Annotation Processor for setting arguments in android fragments
+```java
+
+```
 
 AnnotatetdAdapter: Annotation processor for generating RecyclerView and AbsListView adapters
 
+```java
+@Arg
+String title;
+
+@Arg(required = false)
+int id;
+
+FragmentArgs.inject(this);
+
+@FragmentArgsInherited
+public class Frag01 extend Frag00
+
+```
+
 ParcelablePlease: Annotation Processor for generating Parcelable code
+```java
+
+```
 
 AdapterDelegates: "Favor composition over inheritance" for RecyclerView Adapters
+```java
+
+```
 
 IntentBuilder: Type safe intent building for services and activities
+'''java
+
+```
 
 
 [0]: https://github.com/sockeqwe
