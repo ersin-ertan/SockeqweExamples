@@ -1,18 +1,12 @@
 package com.nullcognition.fragmentargs;// Created by ersin on 29/07/15
 
 import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.hannesdorfmann.fragmentargs.annotation.Arg;
 import com.hannesdorfmann.fragmentargs.annotation.FragmentArgsInherited;
-import com.hannesdorfmann.fragmentargs.bundler.CastedArrayListArgsBundler;
-
-import java.util.List;
 
 @FragmentArgsInherited
 public class Frag01 extends Frag00{

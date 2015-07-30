@@ -9,5 +9,5 @@
 	xmlns:android = "http://schemas.android.com/apk/res/android"
 	/>
 <!--Odd, had to manually move the layout-sw folder into res to get the above line to work,
-android stuudio auto placed the folder as a sub of layout which is standard functionality... but
+android studio auto placed the folder as a sub of layout which is standard functionality... but
 it did'nt work-->
