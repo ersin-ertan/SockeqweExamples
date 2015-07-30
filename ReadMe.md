@@ -1,5 +1,11 @@
 ## Developers: [Hannes Dorfmann][0], [Emil Sjölander][1]
-#### Sockeqwe Libraries: [FragmentArgs][2], [AnnotatetdAdapter][3], [ParcelablePlease][4], [AdapterDelegates][5]
+
+#### Sockeqwe Libraries
+-[FragmentArgs][2]
+-[AnnotatetdAdapter][3]
+-[ParcelablePlease][4]
+-[AdapterDelegates][5]
+
 #### Emilsjolander Libraries: [IntentBuilder][6]
 ---
 
@@ -33,4 +39,5 @@
 [8]: https://github.com/ersin-ertan/SockeqweExamples/tree/master/annotatedadapter/src/main/java/com/nullcognition/annotatedadapter
 [9]: https://github.com/ersin-ertan/SockeqweExamples/tree/master/parcelableplease/src/main/java/com/nullcognition/parcelableplease
 [10]: https://github.com/ersin-ertan/SockeqweExamples/tree/master/adapterdelegates/src/main/java/com/nullcognition/adapterdelegates
+
 [11]: https://github.com/ersin-ertan/SockeqweExamples/tree/master/intentbuilder/src/main/java/com/nullcognition/intentbuilder
