@@ -1,4 +1,6 @@
-## Developers: [Hannes Dorfmann][0], [Emil Sjölander][1]
+## Developers
+ - [Hannes Dorfmann][0]
+ - [Emil Sjölander][1]
 
 #### Sockeqwe Libraries
 - [FragmentArgs][2]
@@ -6,7 +8,8 @@
 - [ParcelablePlease][4]
 - [AdapterDelegates][5]
 
-#### Emilsjolander Libraries: [IntentBuilder][6]
+#### Emilsjolander Libraries
+- [IntentBuilder][6]
 ---
 
 ######[FragmentArgs][7]: Annotation Processor for setting arguments in android fragments
