@@ -1,14 +1,14 @@
-**Developers**
+###**Developers**
  - [Hannes Dorfmann][0] sockeqwe
  - [Emil Sjölander][1] emilsjolander
 
-**Sockeqwe Libraries**
+#####**Sockeqwe Libraries**
 - [FragmentArgs][2]
 - [AnnotatetdAdapter][3]
 - [ParcelablePlease][4]
 - [AdapterDelegates][5]
 
-**Emilsjolander Libraries**
+####**Emilsjolander Libraries**
 - [IntentBuilder][6]
 
 ---
