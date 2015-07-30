@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity{
 			@Override
 			public void run(){
 
-				// cannot offer a null value for a not required param, as is type specific
+				// cannot offer a null value for a not required primitive param, as is type specific
 				Frag01 frag01 = new Frag01Builder(isTablet, "required01").notRequired(2).build();
 				getSupportFragmentManager().beginTransaction()
 				                           .add(R.id.layout_lin, frag01, Frag01.TAG)

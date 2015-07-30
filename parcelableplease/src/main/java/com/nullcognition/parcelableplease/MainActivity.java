@@ -1,37 +1,43 @@
 package com.nullcognition.parcelableplease;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.IntentFilter;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.os.Handler;
+import android.support.v4.content.LocalBroadcastManager;
+import android.support.v7.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity{
+
+	private MyReceiver myReceiver;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+		myReceiver = new MyReceiver();
+
+		new Handler().postDelayed(new Runnable(){
+			@Override
+			public void run(){
+				MyIntentService.startServiceActionFoo(getApplicationContext(), "assignedInMain");
+			}
+		}, 1000);
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu){
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.menu_main, menu);
-		return true;
+	protected void onStart(){
+		super.onStart();
+
+		LocalBroadcastManager.getInstance(this).registerReceiver(myReceiver, new IntentFilter(MyReceiver.ACTION));
+
+//		Intent intent = new MyReceiverIntentBuilder(8).build(this).setAction(MyReceiver.ACTION);
+//      does not work with dynamic broadcast receivers, but works with static declared in Manifest.xml
 	}
 
 	@Override
-	public boolean onOptionsItemSelected(MenuItem item){
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-
-		//noinspection SimplifiableIfStatement
-		if(id == R.id.action_settings){
-			return true;
-		}
-
-		return super.onOptionsItemSelected(item);
+	protected void onPause(){
+		LocalBroadcastManager.getInstance(this).unregisterReceiver(myReceiver);
+		super.onPause();
 	}
 }

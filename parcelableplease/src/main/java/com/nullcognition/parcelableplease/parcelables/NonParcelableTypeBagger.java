@@ -8,16 +8,14 @@ public class NonParcelableTypeBagger implements ParcelBagger<NonParcelableType>{
 	@Override
 	public void write(final NonParcelableType value, final Parcel out, final int flags){
 
-		if(value == null){ out.writeInt(-1);}  // default field default
-		else{ out.writeInt(value.i);}
+		if(value == null){ throw new NullPointerException();}  // added
+		else{ out.writeInt(value.getI());}
 	}
 
 	@Override
 	public NonParcelableType read(final Parcel in){
 
 		int i = in.readInt();
-		if(i == -1){ return null;}
-
 		return new NonParcelableType(i);
 	}
 }
