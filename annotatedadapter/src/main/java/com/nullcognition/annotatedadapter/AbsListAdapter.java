@@ -42,7 +42,7 @@ public class AbsListAdapter extends AbsListViewAnnotatedAdapter implements AbsLi
 
 	@Override
 	public long getItemId(final int position){ // don't know what this is for
-		return txt_img;
+		return 0;
 	}
 
 	@Override
