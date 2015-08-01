@@ -9,6 +9,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/adapterdelegates" />
             <option value="$PROJECT_DIR$/annotatedadapter" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/fragmentargs" />

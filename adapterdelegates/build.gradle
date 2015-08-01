@@ -1,12 +1,11 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.neenbedankt.android-apt'
 
 android{
 	compileSdkVersion 22
 	buildToolsVersion "22.0.1"
 
 	defaultConfig{
-		applicationId "com.nullcognition.annotatedadapter"
+		applicationId "com.nullcognition.adapterdelegates"
 		minSdkVersion 15
 		targetSdkVersion 22
 		versionCode 1
@@ -27,8 +26,6 @@ dependencies{
 	compile 'com.android.support:recyclerview-v7:22.2.1'
 
 
-	// annotated adapter
-	compile 'com.hannesdorfmann.annotatedadapter:annotation:1.1.0'
-	compile 'com.hannesdorfmann.annotatedadapter:support-recyclerview:1.1.0'
-	apt 'com.hannesdorfmann.annotatedadapter:processor:1.1.0'
+	// adapterdelegates
+	compile 'com.hannesdorfmann:adapterdelegates:1.0.2'
 }
