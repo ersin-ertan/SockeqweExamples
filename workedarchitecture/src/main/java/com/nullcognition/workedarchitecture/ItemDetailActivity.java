@@ -1,28 +1,37 @@
 package com.nullcognition.workedarchitecture;
 
-import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
+import se.emilsjolander.intentbuilder.Extra;
+import se.emilsjolander.intentbuilder.IntentBuilder;
+
+@IntentBuilder
 public class ItemDetailActivity extends AppCompatActivity{
+
+	@Extra
+	String id;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_item_detail);
 
+		setContentView(R.layout.activity_item_detail);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+		initFragment(savedInstanceState);
+	}
+
+	private void initFragment(final Bundle savedInstanceState){
+
+		Intent intent = getIntent();
+		if(intent != null){ ItemDetailActivityIntentBuilder.inject(intent, this); }
+
 		if(savedInstanceState == null){
-			Bundle arguments = new Bundle();
-			arguments.putString(ItemDetailFragment.ARG_ITEM_ID,
-					getIntent().getStringExtra(ItemDetailFragment.ARG_ITEM_ID));
-			ItemDetailFragment fragment = new ItemDetailFragment();
-			fragment.setArguments(arguments);
-			getSupportFragmentManager().beginTransaction()
-			                           .add(R.id.item_detail_container, fragment)
-			                           .commit();
+			ItemDetailFragment.addNewItemDetailFragment(getSupportFragmentManager(), false, id);
 		}
 	}
 

@@ -1,12 +1,8 @@
 package com.nullcognition.workedarchitecture;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -19,9 +15,9 @@ public class ItemListActivity extends AppCompatActivity
 		implements ItemListFragment.Callbacks,
 		           NavigationDrawerFragment.NavigationDrawerCallbacks{
 
-	private boolean mTwoPane;
-	private NavigationDrawerFragment mNavigationDrawerFragment;
-	private CharSequence mTitle;
+	private boolean                  isTablet;
+	private NavigationDrawerFragment navigationDrawerFragment;
+	private CharSequence             title;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
@@ -33,17 +29,15 @@ public class ItemListActivity extends AppCompatActivity
 
 	}
 	private void initNavDrawer(){
-		mNavigationDrawerFragment = (NavigationDrawerFragment)
+		navigationDrawerFragment = (NavigationDrawerFragment)
 				getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-		mTitle = getTitle();
+		title = getTitle();
 
-		mNavigationDrawerFragment.setUp(
-				R.id.navigation_drawer,
-				(DrawerLayout) findViewById(R.id.drawer_layout));
+		navigationDrawerFragment.setUp(R.id.navigation_drawer, (R.id.drawer_layout));
 	}
 	private void initTwoPane(){
 		if(findViewById(R.id.item_detail_container) != null){
-			mTwoPane = true;
+			isTablet = true;
 			((ItemListFragment) getSupportFragmentManager()
 					.findFragmentById(R.id.item_list))
 					.setActivateOnItemClick(true);
@@ -53,21 +47,10 @@ public class ItemListActivity extends AppCompatActivity
 
 	@Override
 	public void onItemSelected(String id){
-		if(mTwoPane){
-			Bundle arguments = new Bundle();
-			arguments.putString(ItemDetailFragment.ARG_ITEM_ID, id);
-			ItemDetailFragment fragment = new ItemDetailFragment();
-			fragment.setArguments(arguments);
-			getSupportFragmentManager().beginTransaction()
-			                           .replace(R.id.item_detail_container, fragment)
-			                           .commit();
-
+		if(isTablet){
+			ItemDetailFragment.addNewItemDetailFragment(getSupportFragmentManager(), isTablet, id);
 		}
-		else{
-			Intent detailIntent = new Intent(this, ItemDetailActivity.class);
-			detailIntent.putExtra(ItemDetailFragment.ARG_ITEM_ID, id);
-			startActivity(detailIntent);
-		}
+		else{ startActivity(new ItemDetailActivityIntentBuilder(id).build(this));}
 	}
 
 	// NavigationDrawer
@@ -82,13 +65,13 @@ public class ItemListActivity extends AppCompatActivity
 	public void onSectionAttached(int number){
 		switch(number){
 			case 1:
-				mTitle = getString(R.string.title_section1);
+				title = getString(R.string.title_section1);
 				break;
 			case 2:
-				mTitle = getString(R.string.title_section2);
+				title = getString(R.string.title_section2);
 				break;
 			case 3:
-				mTitle = getString(R.string.title_section3);
+				title = getString(R.string.title_section3);
 				break;
 		}
 	}
@@ -97,13 +80,13 @@ public class ItemListActivity extends AppCompatActivity
 		ActionBar actionBar = getSupportActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
 		actionBar.setDisplayShowTitleEnabled(true);
-		actionBar.setTitle(mTitle);
+		actionBar.setTitle(title);
 	}
 
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu){
-		if(!mNavigationDrawerFragment.isDrawerOpen()){
+		if(!navigationDrawerFragment.isDrawerOpen()){
 			getMenuInflater().inflate(R.menu.nav_drawer, menu);
 			restoreActionBar();
 			return true;
@@ -128,7 +111,7 @@ public class ItemListActivity extends AppCompatActivity
 
 		public static PlaceholderFragment newInstance(int sectionNumber){
 			PlaceholderFragment fragment = new PlaceholderFragment();
-			Bundle args = new Bundle();
+			Bundle              args     = new Bundle();
 			args.putInt(ARG_SECTION_NUMBER, sectionNumber);
 			fragment.setArguments(args);
 			return fragment;
