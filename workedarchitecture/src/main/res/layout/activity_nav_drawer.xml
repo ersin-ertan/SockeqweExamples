@@ -1,0 +1,40 @@
+<!-- A DrawerLayout is intended to be used as the top-level
+content view using match_parent for both width and height to consume the full space available. -->
+<android.support.v4.widget.DrawerLayout
+	android:id = "@+id/drawer_layout"
+	android:layout_height = "match_parent"
+	android:layout_width = "match_parent"
+	tools:context = "com.nullcognition.workedarchitecture.NavDrawerActivity"
+	xmlns:android = "http://schemas.android.com/apk/res/android"
+	xmlns:tools = "http://schemas.android.com/tools"
+	>
+
+	<FrameLayout
+		android:id = "@+id/container"
+		android:layout_height = "match_parent"
+		android:layout_width = "match_parent"
+		>
+	</FrameLayout>
+
+	<FrameLayout
+		android:id = "@+id/container_item_list"
+		android:layout_height = "match_parent"
+		android:layout_width = "match_parent"
+		>
+
+		<!-- let the system choose for us-->
+		<include layout="@layout/activity_item_list"></include>
+
+	</FrameLayout>
+
+
+	<fragment
+		android:id = "@+id/navigation_drawer"
+		android:layout_gravity = "start"
+		android:layout_height = "match_parent"
+		android:layout_width = "@dimen/navigation_drawer_width"
+		android:name = "com.nullcognition.workedarchitecture.NavigationDrawerFragment"
+		tools:layout = "@layout/fragment_navigation_drawer"
+		/>
+
+</android.support.v4.widget.DrawerLayout>

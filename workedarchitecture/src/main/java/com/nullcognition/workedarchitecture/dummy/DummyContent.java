@@ -11,9 +11,37 @@ public class DummyContent{
 	public static Map<String, DummyItem> ITEM_MAP = new HashMap<String, DummyItem>();
 
 	static{
-		addItem(new DummyItem("1", "Item 1"));
-		addItem(new DummyItem("2", "Item 2"));
-		addItem(new DummyItem("3", "Item 3"));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
+		addItem(new DummyItem(String.valueOf(DummyItem.idCounter)));
 	}
 
 	private static void addItem(DummyItem item){
@@ -24,9 +52,10 @@ public class DummyContent{
 	public static class DummyItem{
 		public String id;
 		public String content;
+		public static long idCounter = 0;
 
-		public DummyItem(String id, String content){
-			this.id = id;
+		public DummyItem(String content){
+			this.id = String.valueOf(idCounter++);
 			this.content = content;
 		}
 
