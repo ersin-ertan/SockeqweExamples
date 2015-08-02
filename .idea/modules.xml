@@ -6,9 +6,11 @@
       <module fileurl="file://$PROJECT_DIR$/adapterdelegates/adapterdelegates.iml" filepath="$PROJECT_DIR$/adapterdelegates/adapterdelegates.iml" />
       <module fileurl="file://$PROJECT_DIR$/annotatedadapter/annotatedadapter.iml" filepath="$PROJECT_DIR$/annotatedadapter/annotatedadapter.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/fragmentargs/fragmentargs.iml" filepath="$PROJECT_DIR$/fragmentargs/fragmentargs.iml" />
       <module fileurl="file://$PROJECT_DIR$/intentbuilder/intentbuilder.iml" filepath="$PROJECT_DIR$/intentbuilder/intentbuilder.iml" />
       <module fileurl="file://$PROJECT_DIR$/parcelableplease/parcelableplease.iml" filepath="$PROJECT_DIR$/parcelableplease/parcelableplease.iml" />
+      <module fileurl="file://$PROJECT_DIR$/workedarchitecture/workedarchitecture.iml" filepath="$PROJECT_DIR$/workedarchitecture/workedarchitecture.iml" />
     </modules>
   </component>
 </project>

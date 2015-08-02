@@ -1,1 +1,1 @@
-include ':app', ':intentbuilder', ':fragmentargs', ':parcelableplease', ':annotatedadapter', ':adapterdelegates'
+include ':app', ':intentbuilder', ':fragmentargs', ':parcelableplease', ':annotatedadapter', ':adapterdelegates', ':workedarchitecture'
