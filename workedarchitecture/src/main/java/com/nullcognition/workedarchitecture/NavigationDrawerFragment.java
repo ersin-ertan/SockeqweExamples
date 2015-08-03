@@ -11,20 +11,17 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.Toast;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
-import butterknife.OnItemClick;
+import com.nullcognition.workedarchitecture.dummy.DummyContent;
 
 public class NavigationDrawerFragment extends FragmentArgable{
 
@@ -34,7 +31,8 @@ public class NavigationDrawerFragment extends FragmentArgable{
 	private NavigationDrawerCallbacks callbacks;
 	private ActionBarDrawerToggle     drawerToggle;
 	private DrawerLayout              drawerLayout;
-	private View                      fragmentContainerView;
+	private View              fragmentContainerView;
+	RecyclerView drawerRecyclerView;
 
 	private int currentSelectedPosition = 0;
 	private boolean fromSavedInstanceState;
@@ -55,7 +53,7 @@ public class NavigationDrawerFragment extends FragmentArgable{
 			fromSavedInstanceState = true;
 		}
 
-		selectItem(currentSelectedPosition);
+//		selectItem(currentSelectedPosition);
 	}
 
 	@Override
@@ -64,31 +62,31 @@ public class NavigationDrawerFragment extends FragmentArgable{
 		setHasOptionsMenu(true);
 	}
 
-	@Bind(R.id.navigation_drawer_listView)
-	ListView mDrawerListView;
 
-	@OnItemClick(R.id.navigation_drawer_listView)
-	public void onItemClick(AdapterView<?> parent, View view, long id, int position){
-		// left other parmeters visible if needed
-		selectItem(position);
-	}
+//	@OnItemClick(R.id.navigation_drawer_recyclerView)
+//	public void onItemClick(AdapterView<?> parent, View view, long id, int position){
+//		// left other parmeters visible if needed
+//		selectItem(position);
+//	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-		mDrawerListView = (ListView) inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
-		ButterKnife.bind(this, mDrawerListView);
+		drawerRecyclerView = (RecyclerView) inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
+		drawerRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-		mDrawerListView.setAdapter(new ArrayAdapter<String>(
-				getActionBar().getThemedContext(),
-				android.R.layout.simple_list_item_activated_1,
-				android.R.id.text1,
-				new String[]{
-						getString(R.string.title_section1),
-						getString(R.string.title_section2),
-						getString(R.string.title_section3),
-				}));
-		mDrawerListView.setItemChecked(currentSelectedPosition, true);
-		return mDrawerListView;
+		drawerRecyclerView.setAdapter(new AdapterGenericList(getActivity(), DummyContent.ITEMS));
+
+//		new ArrayAdapter<String>(
+//				getActionBar().getThemedContext(),
+//				android.R.layout.simple_list_item_activated_1,
+//				android.R.id.text1,
+//				new String[]{
+//						getString(R.string.title_section1),
+//						getString(R.string.title_section2),
+//						getString(R.string.title_section3),
+//				}));
+//		drawerRecyclerView.setItemChecked(currentSelectedPosition, true);
+		return drawerRecyclerView;
 	}
 
 	public boolean isDrawerOpen(){
@@ -157,8 +155,8 @@ public class NavigationDrawerFragment extends FragmentArgable{
 
 	private void selectItem(int position){
 		currentSelectedPosition = position;
-		if(mDrawerListView != null){
-			mDrawerListView.setItemChecked(position, true);
+		if(drawerRecyclerView != null){
+//			drawerRecyclerView.setItemChecked(position, true);
 		}
 		if(drawerLayout != null){
 			drawerLayout.closeDrawer(fragmentContainerView);
@@ -188,7 +186,6 @@ public class NavigationDrawerFragment extends FragmentArgable{
 	@Override
 	public void onDestroyView(){
 		super.onDestroyView();
-		ButterKnife.unbind(this);
 	}
 
 	@Override
@@ -237,7 +234,7 @@ public class NavigationDrawerFragment extends FragmentArgable{
 		return ((AppCompatActivity) getActivity()).getSupportActionBar();
 	}
 
-	public static interface NavigationDrawerCallbacks{
+	public interface NavigationDrawerCallbacks{
 		void onNavigationDrawerItemSelected(int position);
 	}
 }

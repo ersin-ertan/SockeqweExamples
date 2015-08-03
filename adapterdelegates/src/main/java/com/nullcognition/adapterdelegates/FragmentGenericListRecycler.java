@@ -29,7 +29,7 @@ public class FragmentGenericListRecycler extends Fragment{
 		RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
 		recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-		AdapterRecycler adapter = new AdapterRecycler(getActivity(), getList());
+		AdapterGenericListRecycler adapter = new AdapterGenericListRecycler(getActivity(), getList());
 		recyclerView.setAdapter(adapter);
 
 		return rootView;

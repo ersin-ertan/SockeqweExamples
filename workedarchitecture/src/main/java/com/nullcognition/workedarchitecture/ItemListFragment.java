@@ -4,25 +4,23 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.nullcognition.workedarchitecture.dummy.DummyContent;
 
 public class ItemListFragment extends ListFragment{
 
-	private static final String STATE_ACTIVATED_POSITION = "activated_position";
-	private Callbacks mCallbacks = sDummyCallbacks;
-	private int mActivatedPosition = ListView.INVALID_POSITION;
+	private static final String    STATE_ACTIVATED_POSITION = "activated_position";
+	private              Callbacks mCallbacks               = sDummyCallbacks;
+	private              int       mActivatedPosition       = ListView.INVALID_POSITION;
 
 	public interface Callbacks{
-		public void onItemSelected(String id);
+		void onItemSelected(String id);
 	}
 
 	private static Callbacks sDummyCallbacks = new Callbacks(){
 		@Override
-		public void onItemSelected(String id){
-		}
+		public void onItemSelected(String id){ }
 	};
 
 	public ItemListFragment(){}
@@ -31,11 +29,7 @@ public class ItemListFragment extends ListFragment{
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 
-		setListAdapter(new ArrayAdapter<DummyContent.DummyItem>(
-				getActivity(),
-				android.R.layout.simple_list_item_activated_1,
-				android.R.id.text1,
-				DummyContent.ITEMS));
+		setListAdapter(new AdapterAbsList(getActivity(), DummyContent.ITEMS));
 	}
 
 	@Override
